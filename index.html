@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Project</title>
+    <link rel="stylesheet" href="./Css/all.min.css">
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/style.css">
+</head>
+
+<body>
+
+    <div class="w-50 mx-auto my-5">
+        <label for="name">Product Name</label>
+        <input class="form-control mb-3" type="text" id="name" required>
+        <div id="alertName" class="alert alert-danger d-none" role="alert">
+            Must Start With Capital Letter And Minimum Char Is 10
+        </div>
+        
+        <label for="price">Product Price</label>
+        <input class="form-control mb-3" type="number" id="price" required>
+        <div id="alertPrice" class="alert alert-danger d-none" role="alert">
+            Minimum 100 and Maximum 9,999
+        </div>
+
+        <label for="category">Category</label>
+        <input class="form-control mb-3" type="text" id="category" required>
+        <div id="alertCategory" class="alert alert-danger d-none" role="alert">
+            Please Insert Product Category
+        </div>
+        
+
+        <label for="img">Product Image</label>
+        <input class="form-control mb-3" type="file" id="img" required>
+
+        <label for="desc">Description</label>
+        <textarea class="form-control mb-5" type="text" id="desc" required></textarea>
+        <div id="alertDesc" class="alert alert-danger d-none" role="alert">
+            Please  Write Product Description
+        </div>
+
+        <button id="addBtn" class="btn btn-outline-dark p-3 w-100 d-block" onclick="getValues()">Add Product</button>
+
+        <button id="updateBtn" class="btn btn-outline-warning p-3 w-100 d-none" onclick="preUpdate()">Update
+            Product</button>
+
+    </div>
+    <div class="w-50 mx-auto my-5">
+        <input oninput="searchByName(this.value)" class="form-control p-3" type="text" name="" id=""
+            placeholder="Search By Name .........">
+    </div>
+
+    <div class="w-75 mx-auto mt-5">
+        <div class="container-fluid">
+            <!-- <div class="row" id="demo">
+
+                <div class="col-md-3"> 
+                    <div class="bg-info">
+                        <figcaption class="p-3">
+                            <h6>Product Name : Samsung</h6>
+                            <h6>Product Price : price </h6>
+                            <h6>Product Category : category</h6>
+                            <p>Product Desc : Desc</p>
+                            <button class="btn btn-warning">Update</button>
+                            <button class="btn btn-danger">Delete</button>
+
+                        </figcaption>
+                    </div>
+                </div> 
+            </div> -->
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Desc</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody id="demo">
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/main.js"></script>
+</body>
+
+</html>
