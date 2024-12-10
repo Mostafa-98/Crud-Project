@@ -22,7 +22,7 @@ if (localStorage.getItem("all") != null) {
 
 function validName() {
 
-    var regex = /^[A-Z][a-zA-Z]*(?: [a-zA-Z]+)*$/
+    var regex = /^[A-Z][a-z]{3,9}[0-9]{0,3}$/
 
     if (regex.test(productNameInput.value) == true) {
 
@@ -33,12 +33,12 @@ function validName() {
 
     }
     document.getElementById("alertName").classList.replace("d-none", "d-block")
-    return flase
+    return false
 
 }
 function validPrice() {
 
-    var regex = /^(?:[2-9]\d|[1-9]\d{2,3}|10000)$/
+    var regex = /^[1-9][0-9]{2,4}$/
 
     if (regex.test(productPriceInput.value) == true) {
 
@@ -49,11 +49,11 @@ function validPrice() {
 
     }
     document.getElementById("alertPrice").classList.replace("d-none", "d-block")
-    return flase
+    return false
 }
 function validCategory() {
 
-    var regex = /^[A-Za-z]{3,15}(?: [A-Za-z]{1,15})*$/
+    var regex = /^[A-Z][a-z]{3,9}[0-9]{0,3}$/
 
     if (regex.test(productCategoryInput.value) == true) {
 
@@ -64,12 +64,12 @@ function validCategory() {
 
     }
     document.getElementById("alertCategory").classList.replace("d-none", "d-block")
-    return flase
+    return false
 
 }
 function validDesc() {
 
-    var regex = /^[a-zA-Z\s]{5,}$/
+    var regex = /^[a-zA-Z]{5,}$/
 
     if (regex.test(productDescInput.value) == true) {
 
@@ -80,7 +80,7 @@ function validDesc() {
 
     }
     document.getElementById("alertDesc").classList.replace("d-none", "d-block")
-    return flase
+    return false
 
 }
 function getValues() {
@@ -112,7 +112,6 @@ function clearData() {
     productCategoryInput.value = ""
     productImgInput.value = ""
     productDescInput.value = ""
-    
 }
 
 function display() {
