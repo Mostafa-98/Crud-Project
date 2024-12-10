@@ -22,7 +22,7 @@ if (localStorage.getItem("all") != null) {
 
 function validName() {
 
-    var regex = /^[A-Z][a-z]{3,9}[0-9]{0,3}$/
+    var regex = /^[A-Z][a-zA-Z]*(?: [a-zA-Z]+)*$/
 
     if (regex.test(productNameInput.value) == true) {
 
@@ -38,7 +38,7 @@ function validName() {
 }
 function validPrice() {
 
-    var regex = /^[1-9][0-9]{2,4}$/
+    var regex = /^(?:[2-9]\d|[1-9]\d{2,3}|10000)$/
 
     if (regex.test(productPriceInput.value) == true) {
 
@@ -53,7 +53,7 @@ function validPrice() {
 }
 function validCategory() {
 
-    var regex = /^[A-Z][a-z]{3,9}[0-9]{0,3}$/
+    var regex = ^[A-Za-z]{3,15}(?: [A-Za-z]{1,15})*$
 
     if (regex.test(productCategoryInput.value) == true) {
 
@@ -69,7 +69,7 @@ function validCategory() {
 }
 function validDesc() {
 
-    var regex = /^[a-zA-Z]{5,}$/
+    var regex = /^[a-zA-Z\s]{5,}$/
 
     if (regex.test(productDescInput.value) == true) {
 
@@ -112,6 +112,7 @@ function clearData() {
     productCategoryInput.value = ""
     productImgInput.value = ""
     productDescInput.value = ""
+    
 }
 
 function display() {
@@ -210,4 +211,19 @@ function preUpdate() {
     addBtn.classList.replace("d-none", "d-block")
 
 
+}
+
+function emptyAllInputs() {
+    // Empty the values of all input fields and reset the file input.
+    productNameInput.value = "";
+    productPriceInput.value = "";
+    productCategoryInput.value = "";
+    productImgInput.value = "";
+    productDescInput.value = "";
+
+    // Hide any alerts or messages related to validation
+    document.getElementById("alertName").classList.replace("d-block", "d-none");
+    document.getElementById("alertPrice").classList.replace("d-block", "d-none");
+    document.getElementById("alertCategory").classList.replace("d-block", "d-none");
+    document.getElementById("alertDesc").classList.replace("d-block", "d-none");
 }
