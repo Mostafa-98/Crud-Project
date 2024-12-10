@@ -212,18 +212,3 @@ function preUpdate() {
 
 
 }
-
-function emptyAllInputs() {
-    // Empty the values of all input fields and reset the file input.
-    productNameInput.value = "";
-    productPriceInput.value = "";
-    productCategoryInput.value = "";
-    productImgInput.value = "";
-    productDescInput.value = "";
-
-    // Hide any alerts or messages related to validation
-    document.getElementById("alertName").classList.replace("d-block", "d-none");
-    document.getElementById("alertPrice").classList.replace("d-block", "d-none");
-    document.getElementById("alertCategory").classList.replace("d-block", "d-none");
-    document.getElementById("alertDesc").classList.replace("d-block", "d-none");
-}
