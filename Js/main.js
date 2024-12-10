@@ -53,7 +53,7 @@ function validPrice() {
 }
 function validCategory() {
 
-    var regex = ^[A-Za-z]{3,15}(?: [A-Za-z]{1,15})*$
+    var regex = /^[A-Za-z]{3,15}(?: [A-Za-z]{1,15})*$/
 
     if (regex.test(productCategoryInput.value) == true) {
 
